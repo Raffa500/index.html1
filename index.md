@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Calcolo dislivello trekking </h1>
+<form id="frm1" >
+ Altezza di partenza: <input type="text" name="Hbase" value="0"><br>
+ Altezza di arrivo: <input type="text" name="HArrivo" value="1000"><br><br>
+ <!-- <input type="submit" value="Input dati Trekking">-->
+</form>
 
-You can use the [editor on GitHub](https://github.com/Raffa500/index.html1/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<p>Calcola il dislivello:</p>
+<button onclick="myFunction()">Calcola il dislivello:</button>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<p>Il punto di partenza è:</p>
+<p id="base"></p>
+<p>Il punto di arrivo è:</p>
+<p id="arrivo"></p>
 
-### Markdown
+Il dislivello è di:
+<p id="demo"></p>
+<script>
+function myFunction() {
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+var x = document.getElementById("frm1");
 
-```markdown
-Syntax highlighted code block
+var base=x.elements[0].value;  
+document.getElementById("base").innerHTML =base;
 
-# Header 1
-## Header 2
-### Header 3
+var arrivo=x.elements[1].value;
+document.getElementById("arrivo").innerHTML =arrivo;
+  
+  document.getElementById("demo").innerHTML =Dislivello(base,arrivo);
+}
 
-- Bulleted
-- List
+function Dislivello(h1,h2){
+return h2-h1;
+}
 
-1. Numbered
-2. List
+</script>
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Raffa500/index.html1/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</body>
+</html>
